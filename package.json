@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-challenge",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/node": "^16.18.3",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "start": "node source/index.js",
+    "build-source": "node node_modules/typescript/bin/tsc -p source/tsconfig.json",
+    "build-source-watch": "node node_modules/typescript/bin/tsc -w -p source/tsconfig.json",
+    "build-source-debug": "node node_modules/typescript/bin/tsc -p source/tsconfig.debug.json",
+    "build-source-debug-watch": "node node_modules/typescript/bin/tsc -w -p source/tsconfig.debug.json"
+  }
+}
