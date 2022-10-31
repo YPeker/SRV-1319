@@ -1,4 +1,24 @@
 # nodejs-challenge
+
+## Comments
+
+To Start:
+* npm install
+* npm run build-source
+* npm run start
+
+Go to https://localhost:8000 via browser or curl
+
+For performance reasons the clear_smaller version was used at the end. But technically the secret should be decrypted correctly.
+
+Further improvements (if enough time):
+* Performance: e.g. work on the hex buffer directly? Use the hex values of the important letters, "." and digits
+* extract the calculations to utility functions
+* dockerify the solution
+
+
+
+
 ## Code Name RED
 
 Herzlichen Glückwunsch, Du erhältst heute unsere Coding Challenge! Weiter unten findest Du die Aufgaben-Stellung.
