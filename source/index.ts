@@ -1,5 +1,5 @@
 import { createDecipheriv } from "crypto"
-import { readFileSync } from "fs"
+import { createReadStream, readFileSync } from "fs"
 import { PassThrough } from "stream"
 import { createUnzip } from "zlib"
 import { createServer } from 'https'
@@ -15,13 +15,17 @@ const numberArr: number[] = []
 const totalAmountArr: number[] = []
 var bufferStream = new PassThrough()
 bufferStream.end(decryptedData)
-bufferStream.pipe(createUnzip()).on('data', function (chunk) {
+bufferStream.pipe(createUnzip())
+
+createReadStream('clear_smaller.txt').on('data', function (chunk) {
     const stringChunk = chunk.toString()
     const sentences = stringChunk.split(/[\.\?\!]/)
-    for (const sentence of sentences) {
+    for (let i = 0; i < sentences.length; i++) {
+        const sentence = sentences[i];
         let sumOfAllNumbersInSentence = 0
         let sumOfAllLetterValuesInSentence = 0
-        for (const char of sentence) {
+        for (let t = 0; t < sentence.length; t++) {
+            const char = sentence[t];            
             const possibleNumber = Number.parseInt(char)
             if (!Number.isNaN(possibleNumber)) {
                 sumOfAllNumbersInSentence += possibleNumber
