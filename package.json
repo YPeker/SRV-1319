@@ -11,5 +11,8 @@
     "build-source-watch": "node node_modules/typescript/bin/tsc -w -p source/tsconfig.json",
     "build-source-debug": "node node_modules/typescript/bin/tsc -p source/tsconfig.debug.json",
     "build-source-debug-watch": "node node_modules/typescript/bin/tsc -w -p source/tsconfig.debug.json"
+  },
+  "dependencies": {
+    "csv-parse": "^5.3.1"
   }
 }
